@@ -1,0 +1,11 @@
+const regions = {
+    "Московская область": ["Москва", "Подольск", "Химки"],
+    "Ленинградская область": ["Санкт-Петербург", "Всеволожск", "Гатчина"],
+    "Свердловская область": ["Екатеринбург", "Нижний Тагил", "Каменск-Уральский"]
+};
+
+for (const cities of Object.values(regions)) {
+    for (const city of cities) {
+        document.getElementById('cities').innerHTML += `${city}<br>`;
+    }
+}
