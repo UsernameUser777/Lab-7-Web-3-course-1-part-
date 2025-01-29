@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор темы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .theme-selection {
+            text-align: center;
+        }
+        .theme-selection h1 {
+            margin-bottom: 20px;
+        }
+        .theme-selection button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-selection">
+        <h1>Выберите тему</h1>
+        <button onclick="selectTheme('style1.css')">Светлая тема</button>
+        <button onclick="selectTheme('style2.css')">Темная тема</button>
+        <button onclick="selectTheme('style3.css')">Нейтральная тема</button>
+    </div>
+    <script>
+        function selectTheme(theme) {
+            localStorage.setItem('selectedTheme', theme);
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

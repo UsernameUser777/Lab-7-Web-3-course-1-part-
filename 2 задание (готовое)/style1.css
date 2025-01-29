@@ -1,0 +1,47 @@
+/* Светлая тема */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+header {
+    background-color: #ffcc00;
+    color: #333333;
+}
+
+.main-nav a {
+    color: #ffffff;
+}
+
+.main-nav a:hover {
+    color: #ff9900;
+}
+
+.news-container, .gallery {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.news-title, .gallery h2 {
+    color: #2874f0;
+}
+
+.news-item, .gallery-file-container {
+    background-color: #f9f9f9;
+    border-color: #dddddd;
+}
+
+.sort-buttons button, .pagination button, .modal-controls button, .gallery-grid button {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.sort-buttons button:hover, .pagination button:hover, .modal-controls button:hover, .gallery-grid button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #2874f0;
+    color: #ffffff;
+}

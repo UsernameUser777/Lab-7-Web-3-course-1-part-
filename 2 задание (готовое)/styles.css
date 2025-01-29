@@ -1,0 +1,290 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+header {
+    width: 100%;
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Фиксируем шапку */
+    top: 0;
+    z-index: 1000; /* Шапка всегда поверх контента */
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.news-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin-top: 100px; /* Отступ сверху, чтобы не перекрывался шапкой */
+    overflow-y: auto; /* Включаем прокрутку, если контент превышает высоту экрана */
+    height: calc(100vh - 140px); /* Высота контейнера с учетом шапки и отступов */
+}
+
+.news-container h2 {
+    margin-bottom: 20px;
+}
+
+.news-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.news-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.news-content {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.more-info {
+    display: inline-block;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.more-info:hover {
+    color: #0056b3;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:enabled {
+    background-color: #0056b3;
+}
+
+.page-numbers {
+    display: flex;
+}
+
+.page-numbers a {
+    background-color: white;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.page-numbers a.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Модальное окно поверх всего */
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+}
+
+.close-button:hover {
+    color: darkred;
+}
+
+.gallery {
+    display: block; /* Изменено на block, чтобы секция отображалась */
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-file-container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.333% - 20px); /* Три элемента в строке */
+    box-sizing: border-box;
+}
+
+.file-name {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.file-name:hover {
+    color: #0056b3;
+}
+
+.delete-button, .restore-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-button:hover, .restore-button:hover {
+    background-color: #ff1a1a;
+}
+
+.modal-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-controls button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-controls button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #2874f0;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Стили для формы загрузки */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#file-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.upload-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}

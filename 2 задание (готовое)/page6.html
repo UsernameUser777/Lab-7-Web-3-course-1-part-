@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка и работа с Excel файлами</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        if (!localStorage.getItem('selectedTheme')) {
+            window.location.href = 'theme-selection.html';
+        } else {
+            const theme = localStorage.getItem('selectedTheme');
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = theme;
+            document.head.appendChild(link);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Загрузка и работа с Excel файлами</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="page1.html"><i class="fas fa-newspaper"></i> Новости №1</a></li>
+                <li><a href="page2.html"><i class="fas fa-newspaper"></i> Новости №2</a></li>
+                <li><a href="page3.html"><i class="fas fa-newspaper"></i> Новости №3</a></li>
+                <li><a href="page4.html"><i class="fas fa-newspaper"></i> Новости №4</a></li>
+                <li><a href="page5.html"><i class="fas fa-newspaper"></i> Новости №5</a></li>
+                <li><a href="page6.html"><i class="fas fa-file-excel"></i> Excel файлы</a></li>
+                <li><a href="theme-selection.html"><i class="fas fa-palette"></i> Выбор темы</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="gallery" id="gallery-section">
+            <h2>Excel файлы</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Здесь будут отображаться загруженные Excel файлы -->
+            </div>
+            <form id="upload-form" class="upload-form">
+                <input type="file" id="file-input" accept=".xlsx, .xls" multiple>
+                <button type="button" onclick="uploadFiles()" class="upload-button">Загрузить Excel файлы</button>
+            </form>
+        </section>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modal-content"></div>
+                <div class="modal-controls">
+                    <button onclick="downloadFile()">Скачать</button>
+                    <button onclick="toggleFavorite()">Избранное</button>
+                    <button onclick="deleteFile()">Удалить</button>
+                    <button onclick="shareFile()">Поделиться</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

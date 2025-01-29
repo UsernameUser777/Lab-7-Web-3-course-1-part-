@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        if (!localStorage.getItem('selectedTheme')) {
+            window.location.href = 'theme-selection.html';
+        } else {
+            const theme = localStorage.getItem('selectedTheme');
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = theme;
+            document.head.appendChild(link);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Новости</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="page1.html"><i class="fas fa-newspaper"></i> Новости №1</a></li>
+                <li><a href="page2.html"><i class="fas fa-newspaper"></i> Новости №2</a></li>
+                <li><a href="page3.html"><i class="fas fa-newspaper"></i> Новости №3</a></li>
+                <li><a href="page4.html"><i class="fas fa-newspaper"></i> Новости №4</a></li>
+                <li><a href="page5.html"><i class="fas fa-newspaper"></i> Новости №5</a></li>
+                <li><a href="page6.html"><i class="fas fa-file-excel"></i> Excel файлы</a></li>
+                <li><a href="theme-selection.html"><i class="fas fa-palette"></i> Выбор темы</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="news-container">
+        <h2>Latest News</h2>
+        <div id="news-list">
+            <!-- Пример блока новостей -->
+            <div class="news-item" data-date="2023-10-01">
+                <div class="news-title">News title 1</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 1">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-02">
+                <div class="news-title">News title 2</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 2">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-03">
+                <div class="news-title">News title 3</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 3">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-04">
+                <div class="news-title">News title 4</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 4">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-05">
+                <div class="news-title">News title 5</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 5">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-06">
+                <div class="news-title">News title 6</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 6">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-07">
+                <div class="news-title">News title 7</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 7">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-08">
+                <div class="news-title">News title 8</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 8">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-09">
+                <div class="news-title">News title 9</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 9">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-10">
+                <div class="news-title">News title 10</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 10">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-11">
+                <div class="news-title">News title 11</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 11">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-12">
+                <div class="news-title">News title 12</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 12">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-13">
+                <div class="news-title">News title 13</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 13">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-14">
+                <div class="news-title">News title 14</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 14">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-15">
+                <div class="news-title">News title 15</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 15">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-16">
+                <div class="news-title">News title 16</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 16">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-17">
+                <div class="news-title">News title 17</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 17">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-18">
+                <div class="news-title">News title 18</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 18">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-19">
+                <div class="news-title">News title 19</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 19">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-20">
+                <div class="news-title">News title 20</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 20">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-21">
+                <div class="news-title">News title 21</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 21">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-22">
+                <div class="news-title">News title 22</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 22">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-23">
+                <div class="news-title">News title 23</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 23">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-24">
+                <div class="news-title">News title 24</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 24">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-25">
+                <div class="news-title">News title 25</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 25">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-26">
+                <div class="news-title">News title 26</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 26">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-27">
+                <div class="news-title">News title 27</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 27">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-28">
+                <div class="news-title">News title 28</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 28">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-29">
+                <div class="news-title">News title 29</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 29">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-30">
+                <div class="news-title">News title 30</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 30">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-10-31">
+                <div class="news-title">News title 31</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 31">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-01">
+                <div class="news-title">News title 1</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 1">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-02">
+                <div class="news-title">News title 2</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 2">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-03">
+                <div class="news-title">News title 3</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 3">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-04">
+                <div class="news-title">News title 4</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 4">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-05">
+                <div class="news-title">News title 5</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 5">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-06">
+                <div class="news-title">News title 6</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 6">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-07">
+                <div class="news-title">News title 7</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 7">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-08">
+                <div class="news-title">News title 8</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 8">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-09">
+                <div class="news-title">News title 9</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 9">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-10">
+                <div class="news-title">News title 10</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 10">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-11">
+                <div class="news-title">News title 11</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 11">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-12">
+                <div class="news-title">News title 12</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 12">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-13">
+                <div class="news-title">News title 13</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 13">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-14">
+                <div class="news-title">News title 14</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 14">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-15">
+                <div class="news-title">News title 15</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 15">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-16">
+                <div class="news-title">News title 16</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 16">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-17">
+                <div class="news-title">News title 17</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 17">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-18">
+                <div class="news-title">News title 18</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 18">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-19">
+                <div class="news-title">News title 19</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 19">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-20">
+                <div class="news-title">News title 20</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 20">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-21">
+                <div class="news-title">News title 21</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 21">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-22">
+                <div class="news-title">News title 22</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 22">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-23">
+                <div class="news-title">News title 23</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 23">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-24">
+                <div class="news-title">News title 24</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 24">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-25">
+                <div class="news-title">News title 25</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 25">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-26">
+                <div class="news-title">News title 26</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 26">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-27">
+                <div class="news-title">News title 27</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 27">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-28">
+                <div class="news-title">News title 28</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 28">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-29">
+                <div class="news-title">News title 29</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 29">More info</div>
+            </div>
+            <div class="news-item" data-date="2023-11-30">
+                <div class="news-title">News title 30</div>
+                <div class="news-content">
+                    News example news example News example news example News example news example News example news example News example news example News example news
+                </div>
+                <div class="more-info" data-content="Full content of news 30">More info</div>
+            </div>
+            <!-- Добавьте остальные новости аналогично -->
+        </div>
+        <div class="pagination">
+            <button id="prev-page" onclick="window.location.href='page1.html'">Prev</button>
+            <div class="page-numbers">
+                <a href="page1.html" class="page-number">1</a>
+                <a href="page2.html" class="page-number active">2</a>
+                <a href="page3.html" class="page-number">3</a>
+                <a href="page4.html" class="page-number">4</a>
+                <a href="page5.html" class="page-number">5</a>
+            </div>
+            <button id="next-page" onclick="window.location.href='page3.html'">Next</button>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

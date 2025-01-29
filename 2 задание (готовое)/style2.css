@@ -1,0 +1,47 @@
+/* Темная тема */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+header {
+    background-color: #555555;
+    color: #ffffff;
+}
+
+.main-nav a {
+    color: #cccccc;
+}
+
+.main-nav a:hover {
+    color: #ffffff;
+}
+
+.news-container, .gallery {
+    background-color: #444444;
+    color: #cccccc;
+}
+
+.news-title, .gallery h2 {
+    color: #ff9900;
+}
+
+.news-item, .gallery-file-container {
+    background-color: #555555;
+    border-color: #777777;
+}
+
+.sort-buttons button, .pagination button, .modal-controls button, .gallery-grid button {
+    background-color: #555555;
+    color: #ffffff;
+}
+
+.sort-buttons button:hover, .pagination button:hover, .modal-controls button:hover, .gallery-grid button:hover {
+    background-color: #666666;
+}
+
+footer {
+    background-color: #555555;
+    color: #ffffff;
+}

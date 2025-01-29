@@ -1,0 +1,47 @@
+/* Нейтральная тема */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #e0e0e0;
+    color: #333333;
+}
+
+header {
+    background-color: #cccccc;
+    color: #333333;
+}
+
+.main-nav a {
+    color: #333333;
+}
+
+.main-nav a:hover {
+    color: #666666;
+}
+
+.news-container, .gallery {
+    background-color: #dddddd;
+    color: #333333;
+}
+
+.news-title, .gallery h2 {
+    color: #999999;
+}
+
+.news-item, .gallery-file-container {
+    background-color: #eeeeee;
+    border-color: #bbbbbb;
+}
+
+.sort-buttons button, .pagination button, .modal-controls button, .gallery-grid button {
+    background-color: #aaaaaa;
+    color: #333333;
+}
+
+.sort-buttons button:hover, .pagination button:hover, .modal-controls button:hover, .gallery-grid button:hover {
+    background-color: #999999;
+}
+
+footer {
+    background-color: #cccccc;
+    color: #333333;
+}
