@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Галерея фотографий">
+    <title>Галерея фотографий</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Галерея фотографий</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Галерея</a></li>
+                <li><a href="#recent" onclick="showSection('recent')"><i class="fas fa-clock"></i> Недавно просмотренные</a></li>
+                <li><a href="#frequent" onclick="showSection('frequent')"><i class="fas fa-eye"></i> Часто просмотренные</a></li>
+                <li><a href="#favorites" onclick="showSection('favorites')"><i class="fas fa-heart"></i> Понравившиеся</a></li>
+                <li><a href="#trash" onclick="showSection('trash')"><i class="fas fa-trash"></i> Корзина</a></li>
+                <li><a href="#albums" onclick="showSection('albums')"><i class="fas fa-folder"></i> Альбомы</a></li>
+                <li><a href="#categories" onclick="showSection('categories')"><i class="fas fa-tags"></i> Категории</a></li>
+                <li><a href="#settings" onclick="showSection('settings')"><i class="fas fa-cog"></i> Настройки</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery" id="gallery-section">
+            <h2><i class="fas fa-images"></i> Галерея фотографий</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Здесь будут отображаться загруженные изображения -->
+            </div>
+            <form id="upload-form">
+                <input type="file" id="file-input" accept="image/*" multiple>
+                <button type="button" onclick="uploadImages()"><i class="fas fa-upload"></i> Загрузить фотографии</button>
+            </form>
+            <form id="filter-form">
+                <label for="filter-date">Фильтр по дате:</label>
+                <input type="date" id="filter-date" name="filter-date">
+                <button type="button" onclick="filterImages()">Применить фильтр</button>
+            </form>
+            <form id="search-form">
+                <label for="search-tags">Поиск по тегам:</label>
+                <input type="text" id="search-tags" name="search-tags" placeholder="Введите теги через запятую">
+                <button type="button" onclick="searchImages()">Поиск</button>
+            </form>
+            <form id="advanced-search-form">
+                <label for="search-date">Поиск по дате:</label>
+                <input type="date" id="search-date" name="search-date">
+                <label for="search-album">Поиск по альбому:</label>
+                <input type="text" id="search-album" name="search-album">
+                <button type="button" onclick="advancedSearch()">Поиск</button>
+            </form>
+        </section>
+
+        <section class="gallery" id="recent-section" style="display: none;">
+            <h2><i class="fas fa-clock"></i> Недавно просмотренные</h2>
+            <div class="gallery-grid" id="recent-grid">
+                <!-- Здесь будут отображаться недавно просмотренные изображения -->
+            </div>
+        </section>
+
+        <section class="gallery" id="frequent-section" style="display: none;">
+            <h2><i class="fas fa-eye"></i> Часто просмотренные</h2>
+            <div class="gallery-grid" id="frequent-grid">
+                <!-- Здесь будут отображаться часто просмотренные изображения -->
+            </div>
+        </section>
+
+        <section class="gallery" id="favorites-section" style="display: none;">
+            <h2><i class="fas fa-heart"></i> Понравившиеся</h2>
+            <div class="gallery-grid" id="favorites-grid">
+                <!-- Здесь будут отображаться понравившиеся изображения -->
+            </div>
+        </section>
+
+        <section class="gallery" id="trash-section" style="display: none;">
+            <h2><i class="fas fa-trash"></i> Корзина</h2>
+            <div class="gallery-grid" id="trash-grid">
+                <!-- Здесь будут отображаться удаленные изображения -->
+            </div>
+            <button type="button" onclick="emptyTrash()">Очистить корзину</button>
+        </section>
+
+        <section class="gallery" id="albums-section" style="display: none;">
+            <h2><i class="fas fa-folder"></i> Альбомы</h2>
+            <div class="gallery-grid" id="albums-grid">
+                <!-- Здесь будут отображаться альбомы -->
+            </div>
+            <form id="create-album-form">
+                <label for="album-name">Название альбома:</label>
+                <input type="text" id="album-name" name="album-name">
+                <button type="button" onclick="createAlbum()">Создать альбом</button>
+            </form>
+        </section>
+
+        <section class="gallery" id="categories-section" style="display: none;">
+            <h2><i class="fas fa-tags"></i> Категории</h2>
+            <div class="gallery-grid" id="categories-grid">
+                <!-- Здесь будут отображаться категории -->
+            </div>
+            <form id="create-category-form">
+                <label for="category-name">Название категории:</label>
+                <input type="text" id="category-name" name="category-name">
+                <button type="button" onclick="createCategory()">Создать категорию</button>
+            </form>
+        </section>
+
+        <section class="gallery" id="settings-section" style="display: none;">
+            <h2><i class="fas fa-cog"></i> Настройки</h2>
+            <form id="settings-form">
+                <label for="theme-select">Тема:</label>
+                <select id="theme-select" onchange="changeTheme()">
+                    <option value="light">Светлая</option>
+                    <option value="dark">Темная</option>
+                </select>
+                <label for="images-per-page">Фото на странице:</label>
+                <input type="number" id="images-per-page" min="1" max="100" value="20" onchange="changeImagesPerPage()">
+            </form>
+        </section>
+    </main>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div class="caption">
+            <textarea id="image-description" placeholder="Добавьте описание..."></textarea>
+            <textarea id="image-comments" placeholder="Добавьте комментарий..."></textarea>
+        </div>
+        <div class="modal-controls">
+            <button onclick="rotateLeft()"><i class="fas fa-undo"></i></button>
+            <button onclick="rotateRight()"><i class="fas fa-redo"></i></button>
+            <button onclick="downloadImage()"><i class="fas fa-download"></i></button>
+            <button onclick="toggleFavorite()"><i class="fas fa-heart"></i></button>
+            <button onclick="deleteImage()"><i class="fas fa-trash"></i></button>
+            <button onclick="shareImage()">Поделиться</button>
+            <input type="range" id="brightness-slider" min="0" max="200" value="100">
+            <input type="range" id="contrast-slider" min="0" max="200" value="100">
+            <button onclick="applyFilters()">Применить фильтры</button>
+            <button onclick="cropImage()">Обрезать</button>
+            <button onclick="saveDescription()">Сохранить описание</button>
+            <button onclick="saveComment()">Сохранить комментарий</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Галерея фотографий. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
