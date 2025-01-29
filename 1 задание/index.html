@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №7</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Возведение в степень</h2>
+        <form action="tasks.php" method="post">
+            <label for="val">Число:</label>
+            <input type="number" id="val" name="val" required>
+            <label for="pow">Степень:</label>
+            <input type="number" id="pow" name="pow" required>
+            <button type="submit" name="task" value="power">Возвести в степень</button>
+        </form>
+
+        <h2>Текущее время</h2>
+        <form action="tasks.php" method="post">
+            <button type="submit" name="task" value="time">Показать текущее время</button>
+        </form>
+
+        <h2>Числа, делящиеся на 3</h2>
+        <form action="tasks.php" method="post">
+            <button type="submit" name="task" value="divisibleByThree">Показать числа</button>
+        </form>
+
+        <h2>Числа от 0 до 10</h2>
+        <form action="tasks.php" method="post">
+            <button type="submit" name="task" value="numbers0to10">Показать числа</button>
+        </form>
+
+        <h2>Числа от 0 до 9 без тела цикла</h2>
+        <form action="tasks.php" method="post">
+            <button type="submit" name="task" value="numbers0to9">Показать числа</button>
+        </form>
+
+        <h2>Города и области</h2>
+        <form action="tasks.php" method="post">
+            <button type="submit" name="task" value="cities">Показать города и области</button>
+        </form>
+
+        <h2>Города, начинающиеся с буквы "К"</h2>
+        <form action="tasks.php" method="post">
+            <button type="submit" name="task" value="citiesWithK">Показать города, начинающиеся с буквы "К"</button>
+        </form>
+
+        <h2>Транслитерация строк</h2>
+        <form action="tasks.php" method="post">
+            <label for="transliterate">Строка для транслитерации:</label>
+            <input type="text" id="transliterate" name="transliterate" required>
+            <button type="submit" name="task" value="transliterate">Транслитерировать</button>
+        </form>
+
+        <h2>Калькулятор</h2>
+        <form action="tasks.php" method="post">
+            <label for="num1">Число 1:</label>
+            <input type="number" id="num1" name="num1" required>
+            <label for="num2">Число 2:</label>
+            <input type="number" id="num2" name="num2" required>
+            <label for="operation">Операция:</label>
+            <select id="operation" name="operation" required>
+                <option value="add">Сложение</option>
+                <option value="subtract">Вычитание</option>
+                <option value="multiply">Умножение</option>
+                <option value="divide">Деление</option>
+            </select>
+            <button type="submit" name="task" value="calculator">Вычислить</button>
+        </form>
+
+        <h2>Загрузка файла</h2>
+        <form action="tasks.php" method="post" enctype="multipart/form-data">
+            <label for="file">Выберите файл:</label>
+            <input type="file" id="file" name="file" required>
+            <button type="submit" name="task" value="upload">Загрузить файл</button>
+        </form>
+
+        <?php if (isset($_GET['result'])): ?>
+            <div class="result"><?php echo htmlspecialchars($_GET['result']); ?></div>
+        <?php endif; ?>
+    </div>
+</body>
+</html>
